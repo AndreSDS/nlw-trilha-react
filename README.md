@@ -8,7 +8,7 @@ Objetivo é a criação de uma aplicação web front-end, utilizando o framework
 
 ## Tecnologias utilizadas
  - [ReactJS](https://reactjs.org)
- - [Javascript](https://www.javascript.com)
+ - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
  - [Typescript](https://www.typescriptlang.org)
  - [Git](https://git-scm.com)
  - [Github](https://github.com)
