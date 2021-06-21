@@ -1,3 +1,5 @@
+![Página inicial](https://user-images.githubusercontent.com/21044395/122785057-6adaaa80-d289-11eb-8c54-8bf254e3b5ef.png)
+
 # My let me ask
 
 Projeto promovido pela [Rocketseat](https://rocketseat.com.br), através da plataforma [NLW](https://nextlevelweek.com/inscricao/6).
