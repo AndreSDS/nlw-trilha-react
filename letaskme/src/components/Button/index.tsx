@@ -1,16 +1,12 @@
-import React, { ReactNode, useState } from "react";
+import React, { ButtonHTMLAttributes, useState } from "react";
 
-interface ButtonProps {
-  number?: number;
-  text?: string;
-  children?: ReactNode;
-}
+import '../../styles/button.scss';
 
-export function Button({ text, children, number = 0}: ButtonProps) {
-  const [counter, setCounter] = useState(number);
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-  const increment = () => setCounter(counter + 1);
+export function Button(props: ButtonProps) {
 
-
-  return <button style={{margin: '10px', backgroundColor: 'orange'}} onClick={increment}>{text || children || counter}</button>;
+  return (
+    <button className="button" {...props} />
+  );
 }
