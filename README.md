@@ -16,6 +16,7 @@ Objetivo é a criação de uma aplicação web front-end, utilizando o framework
  - [Github](https://github.com)
  - [Node](https://nodejs.org/en/)
  - [Yarn](https://yarnpkg.com)
+ - [Sass](https://sass-lang.com)
 
 ## Para rodar este projeto na sua máquina
 Faça o clone ou o download do projeto para uma pasta local
