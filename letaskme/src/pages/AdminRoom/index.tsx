@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useRoom } from "../../hooks/useRoom";
 
 import logo from "../../assets/images/logo.svg";
-import delete from "../../assets/images/delete.svg";
+import deleteImg from "../../assets/images/delete.svg";
 
 import { Button } from "../../components/Button";
 import { RoomCode } from "../../components/RoomCode";
@@ -20,7 +20,7 @@ export function AdminRoom() {
   const roomId = params.id;
   const { listQuestions, title } = useRoom(roomId);
 
-  function handleDeleteQuestion(questionId: string) {
+  async function handleDeleteQuestion(questionId: string) {
     // inserir modal react-modal
     if (window.confirm('Tem certeza que deseja exluir essa pergunta?')) {
       await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
@@ -35,7 +35,7 @@ export function AdminRoom() {
 
           <div>
             <RoomCode code={roomId} />
-            <Button isOutlined>Criar sala</Button>
+            <Button isOutlined>Encerrar sala</Button>
           </div>
         </div>
       </header>
@@ -59,7 +59,7 @@ export function AdminRoom() {
               author={question.author}
             >
               <button type="button" onClick={() => handleDeleteQuestion(question.id)}>
-                <img src={delete} alt="Remover pergunta" />
+                <img src={deleteImg} alt="Remover pergunta" />
               </button>
             </Question>
           ))}
