@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { database } from "../services/firebase";
 
 type FirebaseQuestions = Record<
