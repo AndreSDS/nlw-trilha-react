@@ -72,7 +72,7 @@ export function Room() {
 
       <main>
         <div className="room-title">
-          <h1>Nome da sala {title}</h1>
+          <h1>Sala {title}</h1>
           {listQuestions.length > 0 && (
             <span>
               {listQuestions.length}{" "}

@@ -37,6 +37,12 @@ export function Home() {
       return;
     }
 
+    if (roomRef.val().endedAt) {
+      //criar hottoast ou modalreact
+      alert('Room already closed.');
+      return;
+    }
+
     history.push(`/rooms/${roomCode}`);
   }
 
