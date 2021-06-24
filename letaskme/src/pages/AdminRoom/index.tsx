@@ -2,12 +2,14 @@ import { useParams } from "react-router-dom";
 import { useRoom } from "../../hooks/useRoom";
 
 import logo from "../../assets/images/logo.svg";
+import delete from "../../assets/images/delete.svg";
 
 import { Button } from "../../components/Button";
 import { RoomCode } from "../../components/RoomCode";
 import { Question } from "../../components/Question";
 
 import "./styles.scss";
+import { database } from "../../services/firebase";
 
 type RoomParams = {
   id: string;
@@ -17,6 +19,13 @@ export function AdminRoom() {
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { listQuestions, title } = useRoom(roomId);
+
+  function handleDeleteQuestion(questionId: string) {
+    // inserir modal react-modal
+    if (window.confirm('Tem certeza que deseja exluir essa pergunta?')) {
+      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
+    }
+  }
 
   return (
     <div id="page-room">
@@ -48,7 +57,11 @@ export function AdminRoom() {
               key={question.id}
               content={question.content}
               author={question.author}
-            />
+            >
+              <button type="button" onClick={() => handleDeleteQuestion(question.id)}>
+                <img src={delete} alt="Remover pergunta" />
+              </button>
+            </Question>
           ))}
         </div>
       </main>
